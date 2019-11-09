@@ -14,8 +14,17 @@ SeqCourse2018-10XGEX-LPLard_S1_L002_R1_001.fastq.gz  SeqCourse2018-10XGEX-LPLard
 SeqCourse2018-10XGEX-LPLard_S1_L002_R2_001.fastq.gz  SeqCourse2018-10XGEX-LPLard_S1_L004_R2_001.fastq.gz
 
 ```
+**...I1... = 8bp Sample index read:**
+```bash
+@NB551387:259:H25HLBGXC:1:11101:7081:1841 1:N:0:GTTGCAGC
+GTTGCAGC
++
+AAAAAEEE
 
-**...R1... = Illumina Read 1.  This contains the cell barcode and UMI**
+```
+These files contain the Sample Index read information.  Note that the Cellranger mkfastq pipeline also writes the error-corrected sample index into the name line of the corresponding R1 and R2 reads.  See below.  
+
+**...R1... = Illumina Read 1.  This contains the cell barcode and UMI:**
 ```bash
 @NB551387:259:H25HLBGXC:1:11101:7081:1841 1:N:0:GTTGCAGC
 CATCAAGGTCAGATAAGGTCGATCCGTT
@@ -25,7 +34,7 @@ AAAAAEEEEEEEEEEEEEEEE/EEEEE<
 ```
 
 
-**...R2... = Illumina Read 2.  This contains the gene body read (or Cell Hash / CITE-seq tags)**
+**...R2... = Illumina Read 2.  This contains the gene body read (or Cell Hash / CITE-seq tags):**
 ```bash
 @NB551387:259:H25HLBGXC:1:11101:7081:1841 2:N:0:GTTGCAGC
 CTGCAAACCATCTCCTGTGCAGGGTCCTGCTGGCACCATGGTCTCACAGCCACCCG
@@ -36,14 +45,7 @@ A//AAEEE///EA<////</E/</EEAA/AA//EEE<<A<//EAA/6A/<EEEA</
 
 
 
-**...I1... = 8bp Sample index read**
-```bash
-@NB551387:259:H25HLBGXC:1:11101:7081:1841 1:N:0:GTTGCAGC
-GTTGCAGC
-+
-AAAAAEEE
 
-```
 
 
 
