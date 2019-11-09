@@ -1,4 +1,5 @@
-# SeqTech2019 CSHL 2019 Advanced Sequencing Technologies and Applications Course Materials
+# SeqTech2019 
+## CSHL 2019 Advanced Sequencing Technologies and Applications Course Materials
 
 These are the files produced by a NextSeq500 sequencing run:
 
