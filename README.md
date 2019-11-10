@@ -102,8 +102,11 @@ For each sample in your experiment, you'll need to run `cellranger count`.
 
 `cellranger count` will map the reads to the reference genome that you specify and count digital gene expression according to the transcriptome model that was used during building of the reference.  In most cases, we use the pre-built references for the [human and mouse genomes provided by 10X:](https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest)
 
-`cellranger count` is widely used to generate the primary count table, and has become a de facto standard despite there being a few alternatives.  It requires a linux machine with 8GB memory per CPU (to hold the human reference genome in memory), and is quite astoundingly slow and prone to crashing.  Mapping and counting a single sample typically takes 4-8 hours.  
+`cellranger count` is widely used to generate the primary count table, and has become a de facto standard despite there being a few alternatives.  It requires a linux machine with 8GB memory per CPU (to hold the human reference genome in memory), and is quite astoundingly slow and prone to crashing.  Mapping and counting a single sample typically takes 4-8 hours on a single multi-core node with 12-16 CPU cores and 128GB memory. 
 
+If you have a HPC cluster for distributed computing, good for you.  You'll probably get to know your sysadmin really well as you repeatedly crash jobs, hog memory, and wreak havoc on your HPC cluster.  
+
+Unfortunately, Cellranger is still the best option for generating a robust, industry-standard count matrix plus easily shareable results files and a handsome QC summary HTML page.  If you are a power user and simply want an accurate count matrix as quickly as possible, consider switching to [STAR](https://github.com/alexdobin/STAR), which now supports single cell libraries such as 10X Genomics, or any custom barcoding format of your own design.  You won't get the nice shareable Loupe file, but you will get your data after lunch instead of tomorrow morning.  
 
 
 ```bash
@@ -114,9 +117,9 @@ TRANSCRIPTOME=/path/to/transcriptome/folder/
 
 
 cellranger count \
-  --id=$SAMPLE
-  --jobmode=local
-  --localcores=12
+  --id=$SAMPLE \
+  --jobmode=local \
+  --localcores=12 \
   --transcriptome=$TRANSCRIPTOME \
 	--fastqs=/path/to/folder/containing/your/fastqs/ \
 	--sample=$SAMPLE \
