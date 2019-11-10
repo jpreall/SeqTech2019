@@ -301,7 +301,9 @@ cellranger aggr --id=SeqTech2018_LP_combined \
 ```
 `cellranger aggr` is significantly less memory and cpu intensive than `cellranger count`.  If you are aggregating only a few samples, this should take less than an hour.  
 
-![aggr web summary](https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_web_summary.png, "aggr web summary")
+
+<img src="https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_web_summary.png" width="800">
 
 Let's take a look at that aggr Loupe file:
+
 <img src="https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_tsne.png" width="500">
