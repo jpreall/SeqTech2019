@@ -3,7 +3,7 @@
 -------
 
 
-### [Link to pre-baked data](http://34.239.1.158/home/ubuntu/workspace/Preall/SeqTech2018.tar.gz) (415MB .tar.gz file)
+### [Link to pre-baked data](http://34.239.1.158/workspace/Preall/SeqTech2018.tar.gz) (415MB .tar.gz file)
 
 -------
 
