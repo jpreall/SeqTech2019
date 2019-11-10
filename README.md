@@ -175,7 +175,7 @@ Officially, 10X recommends quite long reads to map the gene body:
 
 ### Primary data analysis with Cellranger Count 
 
-For each sample in your experiment, you'll need to run `cellranger count`.  
+For each sample in your experiment, you'll need to run `cellranger count`.  [(detailed map of the pipeline)](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/map/cr-counter)
 
 `cellranger count` will map the reads to the reference genome that you specify and count digital gene expression according to the transcriptome model that was used during building of the reference.  In most cases, we use the pre-built references for the [human and mouse genomes provided by 10X:](https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest)
 
