@@ -5,7 +5,16 @@ This tutorial will be a guide through the first few steps of primary data analys
 1. FASTQ generation with `cellranger mkfastq`
 2. Mapping and count matrix generation with `cellranger count`
 3. Combining two samples into a shared, normalized matrix with `cellranger aggr`
+
 -------
+Example experiment:
+
+5' Gene Expression from murine intestinal lamina propria, gathered by 2018 SeqTech students:
+**Lamina propria**
+![Lamina Propria](https://en.wikipedia.org/wiki/Lamina_propria#/media/File:Oral_mucosa.png "Lamina Propria")
+From wikipedia:
+> The connective tissue of the lamina propria is loose and rich in cells. The cells of the lamina propria are variable and can include fibroblasts, lymphocytes, plasma cells, macrophages, eosinophilic leukocytes, and mast cells.[2] It provides support and nutrition to the epithelium, as well as the means to bind to the underlying tissue. Irregularities in the connective tissue surface, such as papillae found in the tongue, increase the area of contact of the lamina propria and the epithelium.[3]
+
 
 ### Generating a properly formatted set of FASTQs with cellranger mkfastq
 **Congratulations!  You didn't screw up an experiment.  Now you might have data.**
@@ -250,7 +259,9 @@ Be careful not to accidentally bait a computation scientist into discussing the 
 #### Create an aggr.csv file:
 
 ```bash
-
+library_id,molecule_h5
+LP_Lard,/path/to/LP_Lard/outs/molecule_info.h5
+LP_Control,/path/to/LP_Control/outs/molecule_info.h5
 
 
 ```
