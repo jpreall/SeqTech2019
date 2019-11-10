@@ -242,6 +242,15 @@ This is kind of typical for 5' Gene Expression libraries on lymphocyte-rich samp
 ## Combining samples with Cellranger aggr
 
 Let's combine both the control and the lard diet samples into a unified data matrix.  
-Be careful not to accidentally bait a computation scientist into discussing the relative merits of the many different strategies for aggregating multiple data sets.  You will have to gnaw your foot off before they finally get to the punchline: * *there is no single best way to jointly analyze multiple datasets* *
+Be careful not to accidentally bait a computation scientist into discussing the relative merits of the many different strategies for aggregating multiple data sets.  You will have to gnaw your foot off before they finally get to the punchline: 
+* *there is no single best way to jointly analyze multiple datasets* *
 
-10X Genomics has decided to sidestep the issue by providing a simple data aggregation pipeline that takes a conservative approach as a first step, and leaving the more sophisticated steps in your capable hands.  
+10X Genomics has decided to sidestep the issue by providing a simple data aggregation pipeline that takes a conservative approach as a first step, and leaving the more sophisticated steps in your capable hands.  `cellranger aggr` combines two or more datasets by randomly downsampling (discarding) reads from the richer datasets, until all samples have approximately the same median number of reads per cell.  This helps mitigate one of the simplest and easy to fix batch-effects caused by sequencing depth, but will not correct for the zillions of other variables that injected unintended variation to your samples. 
+
+#### Create an aggr.csv file:
+
+```bash
+
+
+
+```
