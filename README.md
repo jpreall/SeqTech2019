@@ -104,7 +104,7 @@ For each sample in your experiment, you'll need to run Cellranger count.  This w
 ```bash
 #!/bin/sh
 
-SAMPLE=My_Sample
+SAMPLE=SeqCourse2018-10XGEX-LPLard
 TRANSCRIPTOME=/path/to/transcriptome/folder/
 
 
@@ -113,8 +113,19 @@ cellranger count \
   --jobmode=local
   --localcores=12
   --transcriptome=$TRANSCRIPTOME \
-	--fastqs=$BASEDIR/mkfastq/$FLOWCELL/outs/fastq_path \
+	--fastqs=/path/to/folder/containing/your/fastqs/ \
 	--sample=$SAMPLE \
   
   ```
+  In the FASTQ example above, the sample ID used was:
+  ```bash
+  SeqCourse2018-10XGEX-LPLard
+  ```
+Cellranger count will search through your FASTQ folders to find files whose names match this sample ID.  If you ran multiple flowcells and wish to combine the data for additional depth, provide two paths to each fastq folder,separated by a comma with no spaces:
   
+```bash
+  	--fastqs=/path/to/fastq/folder1/,/path/to/fastq/folder2/
+```
+Make sure you used the same sample ID when preparing the fastq file from both flowcells.
+  
+   
