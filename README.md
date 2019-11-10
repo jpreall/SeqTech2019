@@ -301,9 +301,10 @@ cellranger aggr --id=SeqTech2018_LP_combined \
 ```
 `cellranger aggr` is significantly less memory and cpu intensive than `cellranger count`.  If you are aggregating only a few samples, this should take less than an hour.  
 
+Once it's done, you can view the web summary to see what was done to normalize the libraries:
 
 <img src="https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_web_summary.png" width="800">
 
-Let's take a look at that aggr Loupe file:
+Let's take a look at that aggr Loupe file.  Each sample is now stored as a separate category under "LibraryID":
 
 <img src="https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_tsne.png" width="500">
