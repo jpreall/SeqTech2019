@@ -7,7 +7,7 @@ This tutorial will be a guide through the first few steps of primary data analys
 3. Combining two samples into a shared, normalized matrix with `cellranger aggr`
 
 -------
-* *Example experiment:* *
+*Example experiment:*
 
 5' Gene Expression from murine intestinal lamina propria, gathered by 2018 SeqTech students:
 
@@ -239,7 +239,7 @@ Who am I kidding, the first thing you did was download and view the pretty Loupe
 
 That's ok, we all do it.  But seriously, go back to the Web Summary.  We're going to talk over what all those values mean in class. 
 
-* *Instrumental Break* *
+*Instrumental Break*
 
 #### Sequencing Saturation
 The single most useful piece of information stored in this summary is the estimate of sequencing saturation.  This will tell you how deeply you have sequenced these libraries, and whether it would be worth your time and money to add additional lanes of sequencing to identify new transcripts improve count numbers for differential expression.  
@@ -259,7 +259,7 @@ This is kind of typical for 5' Gene Expression libraries on lymphocyte-rich samp
 
 Let's combine both the control and the lard diet samples into a unified data matrix.  
 Be careful not to accidentally bait a computation scientist into discussing the relative merits of the many different strategies for aggregating multiple data sets.  You will have to gnaw your foot off before they finally get to the punchline: 
-* *there is no single best way to jointly analyze multiple datasets* *
+*there is no single best way to jointly analyze multiple datasets*
 
 10X Genomics has decided to sidestep the issue by providing a simple data aggregation pipeline that takes a conservative approach as a first step, and leaving the more sophisticated steps in your capable hands.  `cellranger aggr` combines two or more datasets by randomly downsampling (discarding) reads from the richer datasets, until all samples have approximately the same median number of reads per cell.  This helps mitigate one of the simplest and easy to fix batch-effects caused by sequencing depth, but will not correct for the zillions of other variables that injected unintended variation to your samples. 
 
