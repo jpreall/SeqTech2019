@@ -215,6 +215,13 @@ How many tries did it take you?
 
 Your results will now be stored in a folder called `Sample_ID/outs`.  There will also be a bunch of other files containing diagnostic information about the run that you can dig through if you are a masochist.  
 
+For instance, this is what the BAM (possorted_genome_bam.bam) file looks like:
+```bash
+$samtools view possorted_genome_bam.bam 19:5795690-5802672
+NB551387:106:HFL3VBGX9:3:23601:23610:10303	0	19	5795691	255	56M	*	0	0	GAGAGATATTTAGTTTTTATTTCATAAAATCAAAGTATTCAATAAATAGTAGGAGG	AAAAAEEAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE6AEEAEEEEEEEE	NH:i:1	HI:i:1	AS:i:55	nM:i:0	TX:Z:ENSMUST00000172812,+6926,56M;ENSMUST00000173314,+500,56M	GX:Z:ENSMUSG00000092341	GN:Z:Malat1	RE:A:E	BC:Z:TTCCCGAC	QT:Z:AAAAAEEE	CR:Z:GTCTTCGCATCCTTGC	CY:Z:AAAAAEEEEEEEEEEE	CB:Z:GTCTTCGCATCCTTGC-1	UR:Z:GAACATCTTA	UY:Z:EEEEEEEEEE	UB:Z:GAACATCTTA	RG:Z:SeqCourse2018-10XGEX-LPLard-G3:MissingLibrary:1:HFL3VBGX9:3
+```
+If you want to learn about what all these columns and tags mean, check out [this guide](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/bam)
+
 In your `outs/` folder, you should see these files/folders:
 
 ```console
