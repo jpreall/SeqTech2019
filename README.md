@@ -1,7 +1,7 @@
 # SeqTech2019 
 ## CSHL 2019 Advanced Sequencing Technologies and Applications Course Materials
 
-**Congratulations!  You didn't screw up an experiment.  Now you might have data**
+**Congratulations!  You didn't screw up an experiment.  Now you might have data.**
 
 You submitted your 10X libraries to your sequencing core and the run completed successfully.  If your core is nice enough to provide an Illumina quality score plot as part of your data delivery, it might look something like this:
 
@@ -15,12 +15,53 @@ AAGCAGTGGTATCAACGCAGAGTACATGGG
 As it turns out, this is the sequence of the 10X Template Switch Oligo (TSO)
 
 ### Mapping your reads with Cellranger mkfastq
+You probably won't have to do this part yourself, but you might have to instruct your NGS core on how to generate properly formatted FASTQ files that will plug nicely into the subsequent `count` pipeline.  
+
 ```bash
 cellranger mkfastq \
 	--localcores=12 \
-	--run=$BCL \
-	--samplesheet=$BASEDIR/SampleSheet.csv \
+	--run=/path/to/basecalls/ \
+	--samplesheet=/path/to/SampleSheet.csv \
 ```
+**What the heck is a SampleSheet?**
+A sample sheet tells the FASTQ generation pipeline how to break the reads out into separate folders based on their 8bp sample indices, and then how to name these files and organize them into folders.  Your Illumina sequencer will generate a SampleSheet.csv as part of the data generation process, but you may need to modify it in order to build a FASTQ file for 10X Genomics workflows:
+
+**Example SampleSheet.csv**
+
+```bash
+[Header],,,,,,,
+IEMFileVersion,4,,,,,,
+Date,1/24/18,,,,,,
+Workflow,GenerateFASTQ,,,,,,
+Application,NextSeq FASTQ Only,,,,,,
+Assay,TruSeq HT,,,,,,
+Description,,,,,,,
+Chemistry,Amplicon,,,,,,
+,,,,,,,
+[Reads],,,,,,,
+26,,,,,,,
+56,,,,,,,
+[Settings],,,,,,,
+,,,,,,,
+[Data],,,:,,,,
+Sample_ID,Sample_Name,Sample_Plate,Sample_Well,I7_Index_ID,index,Sample_Project,Description
+300180,SeqCourse2018-10XGEX-LPLard,,,SI-GA-A1,SI-GA-A1,SeqTech2018,
+300183,SeqCourse2018-10XGEX-LPcontrol,,,SI-GA-A2,SI-GA-A2,SeqTech2018,
+```
+
+
+10X Genomics uses a clever trick to make barcoding simple.  Each sample barcode is actually a carefully chosen pool of four unique 8bp indices.  This is why you won't see anything that looks like `AAGTCTGA` in these sample sheets, but rather something that looks like `SI-GA-C7`
+
+If you use `cellranger mkfastq` to generate your FASTQs, it will translate `SI-GA-A2` into a set of four 8bp barcodes based on this [table provided by 10X Genomics.](https://s3-us-west-2.amazonaws.com/10x.files/supp/cell-exp/chromium-shared-sample-indexes-plate.csv).   For example:
+
+```bash
+SI-GA-A1,GGTTTACT,CTAAACGG,TCGGCGTC,AACCGTAA
+SI-GA-A2,TTTCATGA,ACGTCCCT,CGCATGTG,GAAGGAAC
+SI-GA-A3,CAGTACTG,AGTAGTCT,GCAGTAGA,TTCCCGAC
+...etc
+```
+
+
 
 -------
 
@@ -39,7 +80,7 @@ SeqCourse2018-10XGEX-LPLard_S1_L002_R2_001.fastq.gz  SeqCourse2018-10XGEX-LPLard
 ```
 
 -------
-
+## What are all those files?
 
 ### ...I1... = 8bp Sample index read:
 ```bash
