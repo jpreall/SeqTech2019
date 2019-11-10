@@ -218,3 +218,4 @@ The first thing you should look at is the `web_summary.html`:
 ![Web Summary](https://github.com/jpreall/SeqTech2019/blob/master/images/CR_web_summary.png "Web Summary Preview")
    
 Who am I kidding, the first thing you did was download and view the pretty Loupe file
+![Loupe snapshow](https://github.com/jpreall/SeqTech2019/blob/master/images/SeqTech_Loupe_Example.png "Your awesome Loupe file")
