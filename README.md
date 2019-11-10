@@ -223,3 +223,11 @@ Who am I kidding, the first thing you did was download and view the pretty Loupe
 
 That's ok, we all do it.  But seriously, go back to the Web Summary.  We're going to talk over what all those values mean in class. 
 
+* *Instrumental Break* *
+
+#### Sequencing Saturation
+The single most useful piece of information stored in this summary is the estimate of sequencing saturation.  This will tell you how deeply you have sequenced these libraries, and whether it would be worth your time and money to add additional lanes of sequencing to identify new transcripts improve count numbers for differential expression.  
+
+To find the saturation, click the tab marked `analysis`
+![Saturation](https://github.com/jpreall/SeqTech2019/blob/master/images/SeqTech_Saturation.png "Sequencing Saturation")
+
