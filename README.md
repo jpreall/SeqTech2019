@@ -1,6 +1,9 @@
 # SeqTech2019 
 ## CSHL 2019 Advanced Sequencing Technologies and Applications Course Materials
 
+**Congratulations!  You didn't screw up an experiment.  Now you might have data**
+Your submitted your 10X libraries to your sequencing core and the run completed successfully.  If your core is nice enough to provide an Illumina quality score plot as part of your data delivery, it might look something like this:
+
 ### Mapping your reads with Cellranger mkfastq
 ```bash
 cellranger mkfastq \
@@ -126,11 +129,7 @@ cellranger count \
 	--sample=$SAMPLE \
   
   ```
-  In the FASTQ example above, the sample ID used was:
-  ```bash
-  SeqCourse2018-10XGEX-LPLard
-  ```
-`cellranger count` will search through your FASTQ folders to find files whose names match this sample ID.  If you ran multiple flowcells and wish to combine the data for additional depth, provide two paths to each fastq folder,separated by a comma with no spaces:
+In the FASTQ example above, the sample ID specified was `SeqCourse2018-10XGEX-LPLard`.  `cellranger count` will search through your FASTQ folders to find files whose names match this sample ID, and automatically recognize Read1 vs Read2 based on the file name.  If you ran multiple flowcells and wish to combine the data for additional depth, provide two paths to each fastq folder,separated by a comma with no spaces:
   
 ```bash
   	--fastqs=/path/to/fastq/folder1/,/path/to/fastq/folder2/
