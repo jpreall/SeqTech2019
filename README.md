@@ -11,8 +11,8 @@ Example experiment:
 
 5' Gene Expression from murine intestinal lamina propria, gathered by 2018 SeqTech students:
 **Lamina propria**
-![Lamina Propria](https://en.wikipedia.org/wiki/Lamina_propria#/media/File:Oral_mucosa.png "Lamina Propria")
-From wikipedia:
+<img src="https://github.com/jpreall/SeqTech2019/blob/master/images/Oral_mucosa.png" width="300">
+From [wikipedia:](https://en.wikipedia.org/wiki/Lamina_propria)
 > The connective tissue of the lamina propria is loose and rich in cells. The cells of the lamina propria are variable and can include fibroblasts, lymphocytes, plasma cells, macrophages, eosinophilic leukocytes, and mast cells.[2] It provides support and nutrition to the epithelium, as well as the means to bind to the underlying tissue. Irregularities in the connective tissue surface, such as papillae found in the tongue, increase the area of contact of the lamina propria and the epithelium.[3]
 
 
@@ -238,8 +238,8 @@ That's ok, we all do it.  But seriously, go back to the Web Summary.  We're goin
 The single most useful piece of information stored in this summary is the estimate of sequencing saturation.  This will tell you how deeply you have sequenced these libraries, and whether it would be worth your time and money to add additional lanes of sequencing to identify new transcripts improve count numbers for differential expression.  
 
 Total saturation is listed on the summary page, with a more thorough view in the `analysis` tab:
-![Saturation](https://github.com/jpreall/SeqTech2019/blob/master/images/SeqTech_Saturation.png "Sequencing Saturation")
 
+<img src="https://github.com/jpreall/SeqTech2019/blob/master/images/SeqTech_Saturation.png" width="300">
 
 Putting it all together, we can see these libraries are actually pretty lousy:
  * Median UMIs per cell: 1,218
