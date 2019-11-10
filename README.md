@@ -192,18 +192,18 @@ How many tries did it take you?
 
 Your results will now be stored in a folder called `Sample_ID/outs`.  There will also be a bunch of other files containing diagnostic information about the run that you can dig through if you are a masochist.  
 
-In your `outs/` folder, you should see these files:
+In your `outs/` folder, you should see these files/folders:
 
-```bash
-analysis
+```console
+analysis/
+filtered_feature_bc_matrix/
+raw_feature_bc_matrix/
 cloupe.cloupe
-filtered_feature_bc_matrix
 filtered_feature_bc_matrix.h5
 metrics_summary.csv
 molecule_info.h5
 possorted_genome_bam.bam
 possorted_genome_bam.bam.bai
-raw_feature_bc_matrix
 raw_feature_bc_matrix.h5
 web_summary.html
 ```
