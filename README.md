@@ -39,12 +39,12 @@ You submitted your 10X libraries to your sequencing core and the run completed s
 
 ![QC images](https://github.com/jpreall/SeqTech2019/blob/master/images/QC_scores.png "Example QC data from NextSeq")
 
-Don't let those ugly spikes at the end of R1 and going on through the beginning of R2 worry you.  This is very typical, and comes from some common but tolerable artifacts of the library prep and sequencing.  If you look closely (or use a tool like FASTQC), you'll even be able to determine the sequence of an abundant "contaminating" signature at the start of Read2:
+Don't let those ugly spikes at the end of R1 and going on through the beginning of R2 worry you.  This is very typical, and comes from some common but tolerable artifacts of the library prep and sequencing.  If you look closely (or use a tool like [FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)), you'll even be able to determine the sequence of an abundant "contaminating" signature at the start of Read2:
 
 ```bash
 AAGCAGTGGTATCAACGCAGAGTACATGGG
 ```
-As it turns out, this is the sequence of the 10X Template Switch Oligo (TSO)
+As it turns out, this is the sequence of the 10X Template Switch Oligo (TSO).  Lots of reads contain with the TSO, due to artifacts of the library chemistry.  [Don't Panic.](https://en.wikipedia.org/wiki/Don%27t_Panic_(The_Hitchhiker%27s_Guide_to_the_Galaxy))
 
 ## Creating 10X-compatible FASTQ files with `cellranger mkfastq`
 You probably won't have to do this part yourself, but you might have to instruct your NGS core on how to generate properly formatted FASTQ files that will plug nicely into the subsequent `count` pipeline.  
