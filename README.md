@@ -242,7 +242,7 @@ The first thing you should look at is the `web_summary.html`:
 
    
 Who am I kidding, the first thing you did was download and view the pretty Loupe file
-![Loupe snapshow](https://github.com/jpreall/SeqTech2019/blob/master/images/SeqTech_Loupe_Example.png "Your awesome Loupe file")
+![Loupe snapshot](https://github.com/jpreall/SeqTech2019/blob/master/images/SeqTech_Loupe_Example.png "Your awesome Loupe file")
 
 That's ok, we all do it.  But seriously, go back to the [Web Summary](https://github.com/jpreall/SeqTech2019/blob/master/files/web_summary.html).  We're going to talk over what all those values mean in class. 
 
@@ -301,10 +301,10 @@ cellranger aggr --id=SeqTech2018_LP_combined \
 ```
 `cellranger aggr` is significantly less memory and cpu intensive than `cellranger count`.  If you are aggregating only a few samples, this should take less than an hour.  
 
-![](https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_web_summary.png, "aggr web summary)
+![aggr web summary](https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_web_summary.png, "aggr web summary")
 
 Let's take a look at that aggr Loupe file
-![](https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_tsne.png, "aggr Loupe file")
+![aggr loupe file](https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_tsne.png, "aggr Loupe file")
 
 
 
