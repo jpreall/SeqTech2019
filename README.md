@@ -7,11 +7,15 @@
 
 -------
 
+## <a name="some-text">My header with a lot of words, and punctuation</a>
+
+link to the mark with
+[Go to my mark](#some-text)
 
 This tutorial will be a guide through the first few steps of primary data analysis:
-1. FASTQ generation with `cellranger mkfastq`
-2. Mapping and count matrix generation with `cellranger count`
-3. Combining two samples into a shared, normalized matrix with `cellranger aggr`
+1. [FASTQ generation with `cellranger mkfastq`](#section1)
+2. [Mapping and count matrix generation with `cellranger count`](#section2)
+3. [Combining two samples into a shared, normalized matrix with `cellranger aggr`](#section3)
 
 -------
 *Example experiment:*
@@ -46,7 +50,7 @@ AAGCAGTGGTATCAACGCAGAGTACATGGG
 ```
 As it turns out, this is the sequence of the 10X Template Switch Oligo (TSO).  Lots of reads contain with the TSO, due to artifacts of the library chemistry.  [Don't Panic.](https://en.wikipedia.org/wiki/Don%27t_Panic_(The_Hitchhiker%27s_Guide_to_the_Galaxy))
 
-## Creating 10X-compatible FASTQ files with `cellranger mkfastq`
+## <a name="section1">Creating 10X-compatible FASTQ files with `cellranger mkfastq`</a>
 You probably won't have to do this part yourself, but you might have to instruct your NGS core on how to generate properly formatted FASTQ files that will plug nicely into the subsequent `count` pipeline.  
 
 ```bash
