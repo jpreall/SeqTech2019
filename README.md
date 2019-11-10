@@ -106,8 +106,9 @@ For each sample in your experiment, you'll need to run `cellranger count`.
 
 If you have a HPC cluster for distributed computing, good for you.  You'll probably get to know your sysadmin really well as you repeatedly crash jobs, hog memory, and wreak havoc on your HPC cluster.  
 
-Unfortunately, Cellranger is still the best option for generating a robust, industry-standard count matrix plus easily shareable results files and a handsome QC summary HTML page.  If you are a power user and simply want an accurate count matrix as quickly as possible, consider switching to [STAR](https://github.com/alexdobin/STAR), which now supports single cell libraries such as 10X Genomics, or any custom barcoding format of your own design.  You won't get the nice shareable Loupe file, but you will get your data after lunch instead of tomorrow morning.  
+Unfortunately, Cellranger is still the best option for generating a robust, industry-standard count matrix plus easily shareable results files and a handsome QC summary HTML page.  If you are a power user and simply want an accurate count matrix as quickly as possible, consider switching to [STAR](https://github.com/alexdobin/STAR).  Cellranger actually relies on an older verion of STAR for the basic transcript alignment, but the newest versions of STAR supports generating count matrices from single cell libraries such as 10X Genomics, or any custom barcoding format of your own design.  You won't get the nice shareable Loupe file, but you will get your data after lunch instead of tomorrow morning.  
 
+Here is how to run Cellranger in local mode, if you have only a single workstation computer or if you want to restrict the run to a single node on your cluster.  I find this is slow but reliable:
 
 ```bash
 #!/bin/sh
