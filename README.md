@@ -80,9 +80,9 @@ SeqCourse2018-10XGEX-LPLard_S1_L002_R2_001.fastq.gz  SeqCourse2018-10XGEX-LPLard
 ```
 
 -------
-## What are all those files?
+### What are all those files?
 
-### ...I1... = 8bp Sample index read:
+#### ...I1... = 8bp Sample index read:
 ```bash
 @NB551387:259:H25HLBGXC:1:11101:7081:1841 1:N:0:GTTGCAGC
 GTTGCAGC
@@ -94,7 +94,7 @@ These files contain the Sample Index read information.  Note that the Cellranger
 
 -------
 
-### ...R1... = Illumina Read 1.  This contains the cell barcode and UMI:
+#### ...R1... = Illumina Read 1.  This contains the cell barcode and UMI:
 ```bash
 @NB551387:259:H25HLBGXC:1:11101:7081:1841 1:N:0:GTTGCAGC
 CATCAAGGTCAGATAAGGTCGATCCGTT
@@ -126,7 +126,7 @@ AAACCCAAGAAACCCG
 
 
 
-### ...R2... = Illumina Read 2.  This contains the gene body read (or Cell Hash / CITE-seq tags):
+#### ...R2... = Illumina Read 2.  This contains the gene body read (or Cell Hash / CITE-seq tags):
 
 Our current sequencing method of choice is the NextSeq500 HighOutput SE75 flow cell.  These kits allow us to do 56 base pair reads for the gene body.  This is because the 75 cycle kit actually ships enough extra reagent to sequence the Illumina indices, plus a little more to spare.  In reality, we can squeeze out 92bp from a SE75 kit. 
 
