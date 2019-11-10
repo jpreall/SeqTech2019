@@ -46,7 +46,7 @@ AAGCAGTGGTATCAACGCAGAGTACATGGG
 ```
 As it turns out, this is the sequence of the 10X Template Switch Oligo (TSO)
 
-### Mapping your reads with Cellranger mkfastq
+## Creating compatible FASTQ files with `cellranger mkfastq'
 You probably won't have to do this part yourself, but you might have to instruct your NGS core on how to generate properly formatted FASTQ files that will plug nicely into the subsequent `count` pipeline.  
 
 ```bash
@@ -182,7 +182,7 @@ Officially, 10X recommends quite long reads to map the gene body:
 
 -------
 
-### Primary data analysis with Cellranger Count 
+## Primary data analysis with `cellranger count`
 
 For each sample in your experiment, you'll need to run `cellranger count`.  [(detailed map of the pipeline)](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/map/cr-counter)
 
@@ -229,6 +229,8 @@ For instance, this is what the BAM (possorted_genome_bam.bam) file looks like:
 $samtools view possorted_genome_bam.bam 19:5795690-5802672 | head -n 1
 NB551387:106:HFL3VBGX9:3:23601:23610:10303	0	19	5795691	255	56M	*	0	0	GAGAGATATTTAGTTTTTATTTCATAAAATCAAAGTATTCAATAAATAGTAGGAGG	AAAAAEEAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE6AEEAEEEEEEEE	NH:i:1	HI:i:1	AS:i:55	nM:i:0	TX:Z:ENSMUST00000172812,+6926,56M;ENSMUST00000173314,+500,56M	GX:Z:ENSMUSG00000092341	GN:Z:Malat1	RE:A:E	BC:Z:TTCCCGAC	QT:Z:AAAAAEEE	CR:Z:GTCTTCGCATCCTTGC	CY:Z:AAAAAEEEEEEEEEEE	CB:Z:GTCTTCGCATCCTTGC-1	UR:Z:GAACATCTTA	UY:Z:EEEEEEEEEE	UB:Z:GAACATCTTA	RG:Z:SeqCourse2018-10XGEX-LPLard-G3:MissingLibrary:1:HFL3VBGX9:3
 ```
+*Note: The pre-baked data that I linked above doesn't include the BAM file, since it's about 13GB in size.*
+
 If you want to learn about what all these columns and tags mean, check out [this guide](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/output/bam)
 
 In your `outs/` folder, you should see these files/folders:
