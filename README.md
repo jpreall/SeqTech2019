@@ -46,7 +46,7 @@ AAGCAGTGGTATCAACGCAGAGTACATGGG
 ```
 As it turns out, this is the sequence of the 10X Template Switch Oligo (TSO)
 
-## Creating compatible FASTQ files with `cellranger mkfastq'
+## Creating compatible FASTQ files with `cellranger mkfastq`
 You probably won't have to do this part yourself, but you might have to instruct your NGS core on how to generate properly formatted FASTQ files that will plug nicely into the subsequent `count` pipeline.  
 
 ```bash
