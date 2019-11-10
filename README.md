@@ -7,11 +7,6 @@
 
 -------
 
-## <a name="some-text">My header with a lot of words, and punctuation</a>
-
-link to the mark with
-[Go to my mark](#some-text)
-
 This tutorial will be a guide through the first few steps of primary data analysis:
 1. [FASTQ generation with `cellranger mkfastq`](#section1)
 2. [Mapping and count matrix generation with `cellranger count`](#section2)
@@ -186,7 +181,7 @@ Officially, 10X recommends quite long reads to map the gene body:
 
 -------
 
-## Primary data analysis with `cellranger count`
+## <a name="section2">Primary data analysis with `cellranger count`</a>
 
 For each sample in your experiment, you'll need to run `cellranger count`.  [(detailed map of the pipeline)](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/map/cr-counter)
 
@@ -286,7 +281,7 @@ Two other files that will be of extreme value to you are the actual data matrice
 The filtered and raw matrices are both also stored under a separate matrix market exchange (.mtx) file format along with separate .csv files listing the cell barcodes and gene names, which can be stiched together into a unified data matrix.  Look for these folders under `filtered_feature_bc_matrix` and `raw_feature_bc_matrix`, respectively.  You can open any of these files with [Seurat](https://satijalab.org/seurat/), or [Scanpy](https://scanpy.readthedocs.io/en/latest/), or potentially other 3rd party analysis packages.   
 
 
-## Combining samples with `cellranger aggr`
+## <a name="section3"> Combining samples with `cellranger aggr`</a>
 
 Let's combine both the control and the lard diet samples into a unified data matrix.  
 Be careful not to accidentally bait a computation scientist into discussing the relative merits of the many different strategies for aggregating multiple data sets.  You will have to gnaw your foot off before they finally get to the punchline: 
