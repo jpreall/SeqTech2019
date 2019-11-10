@@ -1,7 +1,17 @@
 # SeqTech2019 
 ## CSHL 2019 Advanced Sequencing Technologies and Applications Course Materials
 
-These are the files produced by a NextSeq500 sequencing run:
+### Mapping your reads with Cellranger mkfastq
+```bash
+cellranger mkfastq \
+	--localcores=12 \
+	--run=$BCL \
+	--samplesheet=$BASEDIR/SampleSheet.csv \
+```
+
+-------
+
+These are the files produced by Cellranger mkfastq from a NextSeq500 sequencing run:
 
 ```bash
 $ ls /path/to/fastqs/
@@ -86,18 +96,17 @@ Officially, 10X recommends quite long reads to map the gene body:
 
 -------
 
+### Primary data analysis with Cellranger Count 
 
+For each sample in your experiment, you'll need to run Cellranger count.  This will map the reads to the reference genome that you specify and count digital gene expression according to the transcriptome model that was used during building of the reference.  In most cases, we use the pre-built references for the [human and mouse genomes provided by 10X:](https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest)
 
-
-
-
-
+https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest
 
 
 ```bash
 #!/bin/sh
 
-SAMPLE=
+SAMPLE=My_Sample
 TRANSCRIPTOME=/path/to/transcriptome/folder/
 
 
