@@ -208,5 +208,5 @@ raw_feature_bc_matrix.h5
 web_summary.html
 ```
 The first thing you should look at is the `web_summary.html`:
-[Web Summary](https://github.com/jpreall/SeqTech2019/blob/master/images/CR_web_summary.png "Web Summary Preview")
+![Web Summary](https://github.com/jpreall/SeqTech2019/blob/master/images/CR_web_summary.png "Web Summary Preview")
    
