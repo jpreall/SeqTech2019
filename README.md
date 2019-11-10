@@ -10,11 +10,18 @@ This tutorial will be a guide through the first few steps of primary data analys
 Example experiment:
 
 5' Gene Expression from murine intestinal lamina propria, gathered by 2018 SeqTech students:
+
 **Lamina propria**
 <img src="https://github.com/jpreall/SeqTech2019/blob/master/images/Oral_mucosa.png" width="300">
+
 From [wikipedia:](https://en.wikipedia.org/wiki/Lamina_propria)
 > The connective tissue of the lamina propria is loose and rich in cells. The cells of the lamina propria are variable and can include fibroblasts, lymphocytes, plasma cells, macrophages, eosinophilic leukocytes, and mast cells.[2] It provides support and nutrition to the epithelium, as well as the means to bind to the underlying tissue. Irregularities in the connective tissue surface, such as papillae found in the tongue, increase the area of contact of the lamina propria and the epithelium.[3]
 
+We have intestinal lamina propria harvested from two groups of mice:
+ * Normal chow
+ * High-fat lard-based diet
+ 
+Gross.  Let's dive in:
 
 ### Generating a properly formatted set of FASTQs with cellranger mkfastq
 **Congratulations!  You didn't screw up an experiment.  Now you might have data.**
@@ -239,7 +246,7 @@ The single most useful piece of information stored in this summary is the estima
 
 Total saturation is listed on the summary page, with a more thorough view in the `analysis` tab:
 
-<img src="https://github.com/jpreall/SeqTech2019/blob/master/images/SeqTech_Saturation.png" width="300">
+<img src="https://github.com/jpreall/SeqTech2019/blob/master/images/SeqTech_Saturation.png" width="500">
 
 Putting it all together, we can see these libraries are actually pretty lousy:
  * Median UMIs per cell: 1,218
@@ -256,12 +263,28 @@ Be careful not to accidentally bait a computation scientist into discussing the 
 
 10X Genomics has decided to sidestep the issue by providing a simple data aggregation pipeline that takes a conservative approach as a first step, and leaving the more sophisticated steps in your capable hands.  `cellranger aggr` combines two or more datasets by randomly downsampling (discarding) reads from the richer datasets, until all samples have approximately the same median number of reads per cell.  This helps mitigate one of the simplest and easy to fix batch-effects caused by sequencing depth, but will not correct for the zillions of other variables that injected unintended variation to your samples. 
 
+
 #### Create an aggr.csv file:
+
+First, tell cellranger which samples to aggregate by creating an aggr.csv file formatted thusly:
 
 ```bash
 library_id,molecule_h5
 LP_Lard,/path/to/LP_Lard/outs/molecule_info.h5
 LP_Control,/path/to/LP_Control/outs/molecule_info.h5
-
-
 ```
+`cellranger aggregate` uses the `molecule_info.h5` file as the primary data source to do its downsampling.  This file contains rich data about each unique cDNA detected, including the number of duplicated or redundant reads mapping to a common UMI.  It is cleaner to downsample sequencing data based on this data rather than a simplified count matrix, which has discarded any information about the library complexity, PCR duplications, etc.  Cellranger uses this richer data source, but other tools seem to work with the final count matrix just fine.  Again, don't ask a bioinformation about it if you have children to feed some time today.
+
+#### Run cellranger aggr:
+
+```bash
+cellranger aggr --id=SeqTech2018_LP_combined \
+	--localcores=12 \
+	--csv=/path/to/aggr.csv \
+	--normalize=mapped
+```
+`cellranger aggr` is significantly less memory and cpu intensive than `cellranger count`.  If you are aggregating only a few samples, this should take less than an hour.  
+
+
+
+
