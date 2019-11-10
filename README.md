@@ -30,7 +30,7 @@ We have intestinal lamina propria harvested from two groups of mice:
  
 Gross.  Let's dive in:
 
-### Generating a properly formatted set of FASTQs with cellranger mkfastq
+### Illumina sequencing output
 *(This is taken care of for you this year.  But here is some useful information about this step anyway, in case it's ever your responsibility to do the FASTQ generation step.):*
 
 **Congratulations!  You didn't screw up an experiment.  Now you might have data.**
@@ -46,7 +46,7 @@ AAGCAGTGGTATCAACGCAGAGTACATGGG
 ```
 As it turns out, this is the sequence of the 10X Template Switch Oligo (TSO)
 
-## Creating compatible FASTQ files with `cellranger mkfastq`
+## Creating 10X-compatible FASTQ files with `cellranger mkfastq`
 You probably won't have to do this part yourself, but you might have to instruct your NGS core on how to generate properly formatted FASTQ files that will plug nicely into the subsequent `count` pipeline.  
 
 ```bash
