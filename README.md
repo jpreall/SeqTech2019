@@ -1,6 +1,13 @@
 # SeqTech2019 
 ## CSHL 2019 Advanced Sequencing Technologies and Applications Course Materials
 
+This tutorial will be a guide through the first few steps of primary data analysis:
+1. FASTQ generation with `cellranger mkfastq`
+2. Mapping and count matrix generation with `cellranger count`
+3. Combining two samples into a shared, normalized matrix with `cellranger aggr`
+-------
+
+### Generating a properly formatted set of FASTQs with cellranger mkfastq
 **Congratulations!  You didn't screw up an experiment.  Now you might have data.**
 
 You submitted your 10X libraries to your sequencing core and the run completed successfully.  If your core is nice enough to provide an Illumina quality score plot as part of your data delivery, it might look something like this:
@@ -210,3 +217,4 @@ web_summary.html
 The first thing you should look at is the `web_summary.html`:
 ![Web Summary](https://github.com/jpreall/SeqTech2019/blob/master/images/CR_web_summary.png "Web Summary Preview")
    
+Who am I kidding, the first thing you did was download and view the pretty Loupe file
