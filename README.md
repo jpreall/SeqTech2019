@@ -255,6 +255,15 @@ Putting it all together, we can see these libraries are actually pretty lousy:
  
 This is kind of typical for 5' Gene Expression libraries on lymphocyte-rich samples.  T- and B-cells are transcriptionally quiescent, and always contain far fewer unique transcripts than other cell types.  
 
+#### The Data Matrix
+Two other files that will be of extreme value to you are the actual data matrices.  Cellranger packages what would otherwise be an enormous data file into a clean, compressed hierarchical data (HDF5) file format.  It creates two versions: one that has been filtered of "empty" cells based on its [filtering algorithm](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/algorithms/overview), and the raw matrix containing all 3M+ barcodes and their associated gene counts, regardless if they are likely to contain valid cells or not.
+
+ * filtered_feature_bc_matrix.h5
+ * raw_feature_bc_matrix.h5
+
+You can open these files with [Seurat](https://satijalab.org/seurat/), or [Scanpy](https://scanpy.readthedocs.io/en/latest/), or potentially other 3rd party analysis packages
+
+
 ## Combining samples with Cellranger aggr
 
 Let's combine both the control and the lard diet samples into a unified data matrix.  
