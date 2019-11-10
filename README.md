@@ -18,6 +18,7 @@ This tutorial will be a guide through the first few steps of primary data analys
 5' Gene Expression from murine intestinal lamina propria, gathered by 2018 SeqTech students:
 
 **Lamina propria**
+
 <img src="https://github.com/jpreall/SeqTech2019/blob/master/images/Oral_mucosa.png" width="300">
 
 From [wikipedia:](https://en.wikipedia.org/wiki/Lamina_propria)
