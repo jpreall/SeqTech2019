@@ -303,8 +303,5 @@ cellranger aggr --id=SeqTech2018_LP_combined \
 
 ![aggr web summary](https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_web_summary.png, "aggr web summary")
 
-Let's take a look at that aggr Loupe file
-![aggr loupe file](https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_tsne.png, "aggr Loupe file")
-
-
-
+Let's take a look at that aggr Loupe file:
+<img src="https://github.com/jpreall/SeqTech2019/blob/master/images/aggr_tsne.png" width="500">
