@@ -228,6 +228,20 @@ That's ok, we all do it.  But seriously, go back to the Web Summary.  We're goin
 #### Sequencing Saturation
 The single most useful piece of information stored in this summary is the estimate of sequencing saturation.  This will tell you how deeply you have sequenced these libraries, and whether it would be worth your time and money to add additional lanes of sequencing to identify new transcripts improve count numbers for differential expression.  
 
-To find the saturation, click the tab marked `analysis`
+Total saturation is listed on the summary page, with a more thorough view in the `analysis` tab:
 ![Saturation](https://github.com/jpreall/SeqTech2019/blob/master/images/SeqTech_Saturation.png "Sequencing Saturation")
 
+
+Putting it all together, we can see these libraries are actually pretty lousy:
+ * Median UMIs per cell: 1,218
+ * Median genes per cell: 601
+ * Sequencing saturation: 72.4%
+ 
+This is kind of typical for 5' Gene Expression libraries on lymphocyte-rich samples.  T- and B-cells are transcriptionally quiescent, and always contain far fewer unique transcripts than other cell types.  
+
+## Combining samples with Cellranger aggr
+
+Let's combine both the control and the lard diet samples into a unified data matrix.  
+Be careful not to accidentally bait a computation scientist into discussing the relative merits of the many different strategies for aggregating multiple data sets.  You will have to gnaw your foot off before they finally get to the punchline: * *there is no single best way to jointly analyze multiple datasets* *
+
+10X Genomics has decided to sidestep the issue by providing a simple data aggregation pipeline that takes a conservative approach as a first step, and leaving the more sophisticated steps in your capable hands.  
