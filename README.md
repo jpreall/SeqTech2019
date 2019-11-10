@@ -1,5 +1,12 @@
 # SeqTech2019 
 ## CSHL 2019 Advanced Sequencing Technologies and Applications Course Materials
+-------
+
+
+### [Link to pre-baked data](http://34.239.1.158/home/ubuntu/workspace/Preall/SeqTech2018.tar.gz) (415MB .tar.gz file)
+
+-------
+
 
 This tutorial will be a guide through the first few steps of primary data analysis:
 1. FASTQ generation with `cellranger mkfastq`
@@ -24,6 +31,8 @@ We have intestinal lamina propria harvested from two groups of mice:
 Gross.  Let's dive in:
 
 ### Generating a properly formatted set of FASTQs with cellranger mkfastq
+*(This is taken care of for you this year.  But here is some useful information about this step anyway, in case it's ever your responsibility to do the FASTQ generation step.):*
+
 **Congratulations!  You didn't screw up an experiment.  Now you might have data.**
 
 You submitted your 10X libraries to your sequencing core and the run completed successfully.  If your core is nice enough to provide an Illumina quality score plot as part of your data delivery, it might look something like this:
