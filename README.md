@@ -28,7 +28,7 @@ SeqCourse2018-10XGEX-LPLard_S1_L002_R2_001.fastq.gz  SeqCourse2018-10XGEX-LPLard
 -------
 
 
-**...I1... = 8bp Sample index read:**
+### ...I1... = 8bp Sample index read:
 ```bash
 @NB551387:259:H25HLBGXC:1:11101:7081:1841 1:N:0:GTTGCAGC
 GTTGCAGC
@@ -40,7 +40,7 @@ These files contain the Sample Index read information.  Note that the Cellranger
 
 -------
 
-**...R1... = Illumina Read 1.  This contains the cell barcode and UMI:**
+### ...R1... = Illumina Read 1.  This contains the cell barcode and UMI:
 ```bash
 @NB551387:259:H25HLBGXC:1:11101:7081:1841 1:N:0:GTTGCAGC
 CATCAAGGTCAGATAAGGTCGATCCGTT
@@ -72,7 +72,7 @@ AAACCCAAGAAACCCG
 
 
 
-**...R2... = Illumina Read 2.  This contains the gene body read (or Cell Hash / CITE-seq tags):**
+### ...R2... = Illumina Read 2.  This contains the gene body read (or Cell Hash / CITE-seq tags):
 
 Our current sequencing method of choice is the NextSeq500 HighOutput SE75 flow cell.  These kits allow us to do 56 base pair reads for the gene body.  This is because the 75 cycle kit actually ships enough extra reagent to sequence the Illumina indices, plus a little more to spare.  In reality, we can squeeze out 92bp from a SE75 kit. 
 
@@ -98,7 +98,12 @@ Officially, 10X recommends quite long reads to map the gene body:
 
 ### Primary data analysis with Cellranger Count 
 
-For each sample in your experiment, you'll need to run Cellranger count.  This will map the reads to the reference genome that you specify and count digital gene expression according to the transcriptome model that was used during building of the reference.  In most cases, we use the pre-built references for the [human and mouse genomes provided by 10X:](https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest)
+For each sample in your experiment, you'll need to run `cellranger count`.  
+
+`cellranger count` will map the reads to the reference genome that you specify and count digital gene expression according to the transcriptome model that was used during building of the reference.  In most cases, we use the pre-built references for the [human and mouse genomes provided by 10X:](https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest)
+
+`cellranger count` is widely used to generate the primary count table, and has become a de facto standard despite there being a few alternatives.  It requires a linux machine with 8GB memory per CPU (to hold the human reference genome in memory), and is quite astoundingly slow and prone to crashing.  Mapping and counting a single sample typically takes 4-8 hours.  
+
 
 
 ```bash
@@ -121,7 +126,7 @@ cellranger count \
   ```bash
   SeqCourse2018-10XGEX-LPLard
   ```
-Cellranger count will search through your FASTQ folders to find files whose names match this sample ID.  If you ran multiple flowcells and wish to combine the data for additional depth, provide two paths to each fastq folder,separated by a comma with no spaces:
+`cellranger count` will search through your FASTQ folders to find files whose names match this sample ID.  If you ran multiple flowcells and wish to combine the data for additional depth, provide two paths to each fastq folder,separated by a comma with no spaces:
   
 ```bash
   	--fastqs=/path/to/fastq/folder1/,/path/to/fastq/folder2/
