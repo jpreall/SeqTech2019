@@ -2,7 +2,17 @@
 ## CSHL 2019 Advanced Sequencing Technologies and Applications Course Materials
 
 **Congratulations!  You didn't screw up an experiment.  Now you might have data**
-Your submitted your 10X libraries to your sequencing core and the run completed successfully.  If your core is nice enough to provide an Illumina quality score plot as part of your data delivery, it might look something like this:
+
+You submitted your 10X libraries to your sequencing core and the run completed successfully.  If your core is nice enough to provide an Illumina quality score plot as part of your data delivery, it might look something like this:
+
+![QC images](https://github.com/jpreall/SeqTech2019/blob/master/images/QC_scores.png "Example QC data from NextSeq")
+
+Don't let those ugly spikes at the end of R1 and going on through the beginning of R2 worry you.  This is very typical, and comes from some common but tolerable artifacts of the library prep and sequencing.  If you look closely (or use a tool like FASTQC), you'll even be able to determine the sequence of an abundant "contaminating" signature at the start of Read2:
+
+```bash
+AAGCAGTGGTATCAACGCAGAGTACATGGG
+```
+As it turns out, this is the sequence of the 10X Template Switch Oligo (TSO)
 
 ### Mapping your reads with Cellranger mkfastq
 ```bash
