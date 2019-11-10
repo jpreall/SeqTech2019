@@ -7,7 +7,7 @@ This tutorial will be a guide through the first few steps of primary data analys
 3. Combining two samples into a shared, normalized matrix with `cellranger aggr`
 
 -------
-Example experiment:
+* *Example experiment:* *
 
 5' Gene Expression from murine intestinal lamina propria, gathered by 2018 SeqTech students:
 
